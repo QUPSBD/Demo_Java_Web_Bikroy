@@ -20,15 +20,14 @@ public class Locators {
     public static String fashionText = "Fashion That’s Made for You";
     public static By healthAndBeautyPath = By.xpath("/html/body/div[5]/div[2]/h1/span");
     public static String healthAndBeautyText = "Health & Beauty";
-    public static By homeAndGardenPath = By.xpath("/html/body/div[5]/div[2]/nav/ol/li[2]/span");
+    public static By homeAndGardenPath = By.linkText("Home & Garden");
     public static String homeAndGardenText = "Home & Garden";
-    public static By sportsPath = By.xpath("/html/body/div[5]/div[2]/nav/ol/li[2]/span");
+    public static By sportsPath = By.xpath("/html/body/div[5]/div[2]/section/div[1]/div[2]/h1");
     public static String sportsText = "Sporting Goods";
     public static By collectiblesAndArtPagePath = By.xpath("/html/body/div[5]/div[2]/nav/ol/li[2]/span");
     public static String collectiblesAndArtPageText = "Collectibles";
-    public static By industrialEquipmentPagePath = By.xpath("/html/body/div[5]/div[2]/nav/ol/li[2]/span");
+    public static By industrialEquipmentPagePath = By.xpath("/html/body/div[5]/div[2]/h1/span");
     public static String industrialEquipmentPageText = "Business & Industrial";
-    //public static By motorsPagePath = By.xpath("/html/body/div[5]/div[2]/nav/ol/li[2]/span");
     public static String motorsPageUrl = "https://www.ebay.com/sch/6028/i.html?_from=R40&_nkw=Auto+Parts+Accessories&_blrs=recall_filtering";
 
     public static By dailyDeals = By.linkText("Daily Deals");
@@ -40,7 +39,7 @@ public class Locators {
     public static By homeAndGarden = By.linkText("Home & Garden");
     public static By sports = By.linkText("Sports");
     public static By collectiblesAndArtPage = By.linkText("Collectibles and Art");
-    public static By industrialEquipmentPage = By.linkText("Industrial equipment");
+    public static By industrialEquipmentPage = By.xpath("//*[@id='mainContent']/div[1]/ul/li[9]/a");
     public static By motorsPage = By.linkText("Motors");
 
     //popular categories
@@ -79,6 +78,23 @@ public class Locators {
     //public static By fbId = By.id("signin_fb_btn");
     public static By fbXPath = By.xpath("//*[@id='signin_fb_btn']");
     public static By googleId = By.id("signin_ggl_btn");
+
+    //Sell
+    public static String startSellingPageUrl = "https://www.ebay.com/sl/sell";
+    public static String learnToSellPageUrl = "https://pages.ebay.com/seller-center/get-started/selling-basics.html";
+    public static String affiliatesPageUrl = "https://partnernetwork.ebay.com/";
+
+    public static By startSelling = By.linkText("Start selling");
+    public static By learnToSell = By.linkText("Learn to sell");
+    public static By affiliates = By.linkText("Affiliates");
+
+    //Search Product
+
+    public static By searchBox = By.xpath("//*[@id='gh-ac']");
+    public static By searchBtn = By.xpath("//*[@id='gh-btn']");
+    public static By categories = By.id("gh-cat");
+    public static By categoryNameHealthAndBeauty = By.xpath("//*[@id='gh-cat']/option[20]");
+
 
 
 

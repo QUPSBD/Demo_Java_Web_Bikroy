@@ -39,7 +39,7 @@ public class HomePageElements {
     //help & contact
     @Test (priority = 2)
     public void helpAndContact () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.helpAndContact);
         timeout.timeout();
@@ -51,7 +51,7 @@ public class HomePageElements {
     //sell
     @Test (priority = 3)
     public void sellTest () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.sell);
         timeout.timeout();
@@ -62,7 +62,7 @@ public class HomePageElements {
     //electronics
     @Test (priority = 4)
     public void electronicsTest () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.electronics);
         timeout.timeout();
@@ -73,7 +73,7 @@ public class HomePageElements {
     //fashion
     @Test (priority = 5)
     public void fashionTest () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.fashion);
         timeout.timeout();
@@ -84,7 +84,7 @@ public class HomePageElements {
     //healthAndBeauty
     @Test (priority = 6)
     public void healthAndBeautyTest () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.healthAndBeauty);
         timeout.timeout();
@@ -96,7 +96,7 @@ public class HomePageElements {
     //homeAndGarden
     @Test (priority = 7)
     public void homeAndGardenTest () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.homeAndGarden);
         timeout.timeout();
@@ -107,7 +107,7 @@ public class HomePageElements {
     //sports
     @Test (priority = 8)
     public void sportsTest () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.sports);
         timeout.timeout();
@@ -118,7 +118,7 @@ public class HomePageElements {
     //collectiblesAndArtPage
     @Test (priority = 9)
     public void collectiblesAndArtPageTest () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.collectiblesAndArtPage);
         timeout.timeout();
@@ -129,7 +129,7 @@ public class HomePageElements {
     //industrialEquipmentPage
     @Test (priority = 10)
     public void industrialEquipmentPageTest () {
-        driver.navigate().back();
+        commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.industrialEquipmentPage);
         timeout.timeout();
@@ -140,7 +140,7 @@ public class HomePageElements {
     //motorsPage
     @Test (priority = 11)
     public void motorsPageTest () {
-        //driver.navigate().back();
+        commonMethods.back();;
         timeout.timeout();
         commonMethods.clickOnButton(Locators.motorsPage);
         timeout.timeout();
@@ -151,7 +151,6 @@ public class HomePageElements {
 
     @AfterClass
     public void tearDown() {
-        driver.navigate().back();
         timeout.timeout();
         driver.quit();
     }

@@ -57,6 +57,6 @@ public class SignInTest {
     public void tearDown() {
         driver.navigate().back();
         timeout.timeout();
-        //driver.quit();
+        driver.quit();
     }
 }

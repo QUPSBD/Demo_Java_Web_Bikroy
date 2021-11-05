@@ -22,6 +22,10 @@ public class CommonMethods {
         return driver.findElement(element).getText();
     }
 
+    public void sendText(By field, String text) {
+        driver.findElement(field).sendKeys(text);
+    }
+
     public void back () {
         if (!Objects.equals(driver.getCurrentUrl(), Locators.homePageUrl))
         {

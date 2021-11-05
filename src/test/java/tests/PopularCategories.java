@@ -84,7 +84,7 @@ public class PopularCategories {
     }
     //smartPhones
     @Test (priority = 6)
-    public void healthAndBeautyTest () {
+    public void smartPhones () {
         commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.smartPhones);
@@ -96,7 +96,7 @@ public class PopularCategories {
 
     //popularSell
     @Test (priority = 7)
-    public void homeAndGardenTest () {
+    public void popularSell () {
         commonMethods.back();
         timeout.timeout();
         commonMethods.clickOnButton(Locators.popularSell);
