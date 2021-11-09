@@ -74,10 +74,17 @@ public class Locators {
     public static String biddingAndBuyingHelpUrl = "https://www.ebay.com/help/buying";
     public static String storesUrl = "https://www.ebay.com/b/Stores-HUB/bn_7004224522";
 
+    //Sign In
     public static By signIn = By.linkText("Sign in");
     //public static By fbId = By.id("signin_fb_btn");
     public static By fbXPath = By.xpath("//*[@id='signin_fb_btn']");
     public static By googleId = By.id("signin_ggl_btn");
+    public static By userName = By.id("userid");
+    public static By continueBtn = By.id("signin-continue-btn");
+    public static By passWord = By.id("pass");
+    public static By signInBtn = By.id("sgnBt");
+    public static By profileBtn = By.id("gh-ug");
+    public static By signOut = By.linkText("Sign out");
 
     //Sell
     public static String startSellingPageUrl = "https://www.ebay.com/sl/sell";

@@ -24,6 +24,17 @@ public class PopularCategories {
     public void setUp () {
         driver.manage().window().maximize();
         driver.get(homePage.homePageUrl());
+        timeout.timeout();
+        commonMethods.clickOnButton(Locators.signIn);
+        timeout.timeout();
+        commonMethods.back();
+
+        /*commonMethods.sendText(Locators.userName, "ashiq.qups@gmail.com");
+        commonMethods.clickOnButton(Locators.continueBtn);
+        timeout.timeout();
+        commonMethods.sendText(Locators.passWord, "ashiq20");
+        commonMethods.clickOnButton(Locators.signInBtn);
+        timeout.timeout();*/
     }
 
     //sneakers
@@ -109,6 +120,9 @@ public class PopularCategories {
     @AfterClass
     public void tearDown() {
         timeout.timeout();
+        /*commonMethods.clickOnButton(Locators.profileBtn);
+        timeout.timeout();
+        commonMethods.clickOnButton(Locators.signOut);*/
         driver.quit();
     }
 }

@@ -26,6 +26,10 @@ public class Sell {
         driver.get(homePage.homePageUrl());
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,350)", "");
+        timeout.timeout();
+        commonMethods.clickOnButton(Locators.signIn);
+        timeout.timeout();
+        commonMethods.back();
     }
 
     //Start Selling

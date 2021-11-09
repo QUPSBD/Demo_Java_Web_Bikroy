@@ -2,6 +2,7 @@ package tests;
 
 import base.BaseTests;
 import model.CommonMethods;
+import model.Locators;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -23,6 +24,10 @@ public class HomePageTest {
         driver.get(homePage.homePageUrl());
         timeout.timeout();
         driver.manage().window().maximize();
+        timeout.timeout();
+        commonMethods.clickOnButton(Locators.signIn);
+        timeout.timeout();
+        commonMethods.back();
     }
 
     @Test

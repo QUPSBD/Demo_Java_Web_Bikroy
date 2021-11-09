@@ -26,7 +26,20 @@ public class SignInTest {
         driver.manage().window().maximize();
     }
 
-    @Test
+    @Test(priority = 1)
+    public void usernameAndPassLoginTest(){
+        timeout.timeout();
+        commonMethods.clickOnButton(Locators.signIn);
+        timeout.timeout();
+        commonMethods.sendText(Locators.userName, "ashiq.qups@gmail.com");
+        commonMethods.clickOnButton(Locators.continueBtn);
+        timeout.timeout();
+        commonMethods.sendText(Locators.passWord, "ashiq20");
+        commonMethods.clickOnButton(Locators.signInBtn);
+        timeout.timeout();
+    }
+
+    @Test (priority = 2)
     public void facebookLoginTest() {
         timeout.timeout();
         commonMethods.clickOnButton(Locators.signIn);
@@ -44,7 +57,7 @@ public class SignInTest {
         }
         assertEquals(commonMethods.getTitle(), Locators.fbLoginPageTitle);
     }
-    @Test
+    @Test (priority = 3)
     public void googleLoginTest () {
         driver.navigate().back();
         timeout.timeout();

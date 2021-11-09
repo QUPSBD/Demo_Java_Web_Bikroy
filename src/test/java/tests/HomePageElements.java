@@ -23,6 +23,10 @@ public class HomePageElements {
     public void setUp () {
         driver.manage().window().maximize();
         driver.get(homePage.homePageUrl());
+        timeout.timeout();
+        commonMethods.clickOnButton(Locators.signIn);
+        timeout.timeout();
+        commonMethods.back();
     }
 
     //Deals

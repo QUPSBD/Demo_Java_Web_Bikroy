@@ -26,6 +26,10 @@ public class SearchProducts {
         driver.get(homePage.homePageUrl());
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,350)", "");
+        timeout.timeout();
+        commonMethods.clickOnButton(Locators.signIn);
+        timeout.timeout();
+        commonMethods.back();
     }
 
     //search from searchBox
