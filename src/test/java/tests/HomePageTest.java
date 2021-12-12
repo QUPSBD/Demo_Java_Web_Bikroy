@@ -12,34 +12,13 @@ import pages.HomePage;
 
 import static org.testng.Assert.assertEquals;
 
-public class HomePageTest {
-    BaseTests baseTests = new BaseTests();
-    WebDriver driver = baseTests.setUp();
-    Timout timeout = new Timout();
-    CommonMethods commonMethods = new CommonMethods(driver);
-    HomePage homePage = new HomePage(driver);
-
-    @BeforeClass
-    public void setUp () {
-        driver.get(homePage.homePageUrl());
-        timeout.timeout();
-        driver.manage().window().maximize();
-        timeout.timeout();
-        commonMethods.clickOnButton(Locators.signIn);
-        timeout.timeout();
-        commonMethods.back();
-    }
+public class HomePageTest extends BaseTests {
 
     @Test
     public void homePageTest() {
-        timeout.timeout();
-        String title = commonMethods.getTitle();
+        HomePage homePage = new HomePage(driver);
+        Timout.timeout();
+        String title = homePage.getTitle();
         assertEquals(title, "Electronics, Cars, Fashion, Collectibles & More | eBay");
-    }
-
-    @AfterClass
-    public void tearDown() {
-        timeout.timeout();
-        driver.quit();
     }
 }

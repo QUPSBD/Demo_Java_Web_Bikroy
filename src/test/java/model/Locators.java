@@ -102,8 +102,4 @@ public class Locators {
     public static By categories = By.id("gh-cat");
     public static By categoryNameHealthAndBeauty = By.xpath("//*[@id='gh-cat']/option[20]");
 
-
-
-
-
 }

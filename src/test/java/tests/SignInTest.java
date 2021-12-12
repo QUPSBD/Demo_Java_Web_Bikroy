@@ -9,67 +9,62 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import pages.HomePage;
+import pages.LoginPage;
 
 import static org.testng.Assert.assertEquals;
 
-public class SignInTest {
-    BaseTests baseTests = new BaseTests();
-    WebDriver driver = baseTests.setUp();
-    Timout timeout = new Timout();
-    CommonMethods commonMethods = new CommonMethods(driver);
-    HomePage homePage = new HomePage(driver);
+public class SignInTest extends BaseTests {
 
-    @BeforeClass
-    public void setUp () {
-        driver.get(homePage.homePageUrl());
-        timeout.timeout();
-        driver.manage().window().maximize();
-    }
+    CommonMethods commonMethods = new CommonMethods(driver);
 
     @Test(priority = 1)
     public void usernameAndPassLoginTest(){
-        timeout.timeout();
-        commonMethods.clickOnButton(Locators.signIn);
-        timeout.timeout();
-        commonMethods.sendText(Locators.userName, "ashiq.qups@gmail.com");
-        commonMethods.clickOnButton(Locators.continueBtn);
-        timeout.timeout();
-        commonMethods.sendText(Locators.passWord, "ashiq20");
-        commonMethods.clickOnButton(Locators.signInBtn);
-        timeout.timeout();
+        HomePage homePage = new HomePage(driver);
+        Timout.timeout();
+        LoginPage loginPage = homePage.clickSignInButton();
+        Timout.timeout();
+        try {
+            loginPage.setUserName("ashiq.qups@gmail.com");
+            Timout.timeout();
+            loginPage.getContinueButton();
+            Timout.timeout();
+            loginPage.setPassword("ashiq20");
+            Timout.timeout();
+            loginPage.getSignInButton();
+            Timout.timeout();
+        } catch (Exception e) {
+            CommonMethods commonMethods = new CommonMethods(driver);
+            commonMethods.back();
+        }
     }
 
     @Test (priority = 2)
     public void facebookLoginTest() {
-        timeout.timeout();
-        commonMethods.clickOnButton(Locators.signIn);
+        HomePage homePage = new HomePage(driver);
+        Timout.timeout();
+        LoginPage loginPage = homePage.clickSignInButton();
+        Timout.timeout();
         try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            loginPage.clickSignInWithFacebook();
+            assertEquals(loginPage.getTitle(), Locators.fbLoginPageTitle);
+        } catch (Exception e) {
+            CommonMethods commonMethods = new CommonMethods(driver);
+            commonMethods.back();
         }
-        timeout.timeout();
-        commonMethods.clickOnButton(Locators.fbXPath);
-        try {
-            Thread.sleep(5000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        assertEquals(commonMethods.getTitle(), Locators.fbLoginPageTitle);
     }
     @Test (priority = 3)
     public void googleLoginTest () {
-        driver.navigate().back();
-        timeout.timeout();
-        commonMethods.clickOnButton(Locators.googleId);
-        timeout.timeout();
-        System.out.println(commonMethods.getTitle());
-    }
-
-    @AfterClass
-    public void tearDown() {
-        driver.navigate().back();
-        timeout.timeout();
-        driver.quit();
+        HomePage homePage = new HomePage(driver);
+        Timout.timeout();
+        LoginPage loginPage = homePage.clickSignInButton();
+        Timout.timeout();
+        try {
+            loginPage.clickOnSignInWithGoogle();
+            Timout.timeout();
+            System.out.println(commonMethods.getTitle());
+        } catch (Exception e) {
+            CommonMethods commonMethods = new CommonMethods(driver);
+            commonMethods.back();
+        }
     }
 }
